@@ -43,18 +43,7 @@ Cependant un programme majeur vient s'interposer: comment faire pour que Process
 On manque de temps, on a abandonné toute la partie tracking car nous ne sommes même pas surs de pouvoir faire fonctionner le dispositif de base.
 Des pièces se brisent, et entre leur temps d'impression un poil long et l'échéance arrivant à grands pas de la fin de projet ainsi que des examens finaux, il sera impossible d'aboutir notre projet.
 
-
-
-
-
-
-
-
-
-
-
-
-
+Je m'occupe alors du github ainsi que de la présentation orale.
 
 
 
