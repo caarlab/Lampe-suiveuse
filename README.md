@@ -15,3 +15,8 @@ Le but de ce projet est d'essayer de réaliser une lampe suiveuse; un dispositif
 - Roulement à bille
 - Joystick
 - Pièces en impression 3D (Cercle de rotation / Roues / Pieds de soutien / Plateforme ...)
+
+# Logiciels de programmation utilisés:
+
+- Arduino
+- Processing
