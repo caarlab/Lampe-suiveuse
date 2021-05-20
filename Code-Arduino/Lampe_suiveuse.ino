@@ -13,8 +13,10 @@ int blue ;                                      // variable de la valeur du bleu
 int b ;                                         // variable de la valeur du potentiometre bleu
 int Power = 50;                                 // variable de la vélocité du moteur
 int rota ;                                      // variable de la position du joystick
+int mil_joy_x = 485 ;                           // valeure du milieu du joytsick pour x
+int mil_joy_y = 535 ;                           // valeure du milieu du joytsick pour y
 
-const int Moteur_Pied = 3 ;                     // declare la broche pour les moteurs de la base
+
 const int Joystick_x = A0 ;                     // declare la broche pour le joystick ( donnée horizontale )
 const int Joystick_y = A1 ;                     // declare la broche pour le joystick ( donnée verticale )
 const int PontH = 2;                            // declare la broche pour le pont en H
@@ -27,7 +29,6 @@ const int pot_b = A4 ;                          // declare la broche pour le pot
 
 
 void setup() {
-  pinMode ( Moteur_Pied , OUTPUT ) ;            // declare la broche des moteurs de la base en sortie
   servo_lampe.attach(10) ;                      // attache le servomoteur a la broche 9
   pinMode ( Joystick_x , INPUT ) ;              // declare la borche du joystick x en entrée
   pinMode ( Joystick_y , INPUT ) ;              // declare la borche du joystick y en entrée
@@ -47,14 +48,15 @@ void Servo_Lampe () {
 
 }
 
+/*
 void RGB_I () {
   r = analogRead ( pot_r ) ;                    // lecture de la valeur du potentiometre rouge
   g = analogRead ( pot_g ) ;                    // lecture de la valeur du potentiometre vert
   b = analogRead ( pot_b ) ;                    // lecture de la valeur du potentiometre bleu
-  red = map ( r , 0 , 1023 , 0 , 255 ) ;        // attribue une valeur dependant du potentiometre a la variable
+  red = map ( r , 0 , 1023 , 0 , 255 ) ;        // attribue une valeur a la variable
   green = map ( g , 0 , 1023 , 0 , 255 ) ;      // attribue une valeur a la variable
   blue = map ( b , 0 , 1023 , 0 , 255 ) ;       // attribue une valeur a la variable
-  Serial.print ( "Rouge : " );
+  Serial.print ( "Rouge : " );                  // Test de reception des valeurs
   Serial.print ( red ) ;
   Serial.print (' ') ;
   Serial.print ( "Vert : " );
@@ -64,32 +66,27 @@ void RGB_I () {
   Serial.println ( blue ) ;
 
 }
+*/
 
 void Moteur_Rota() {
-  x = analogRead ( Joystick_x ) ;               // lecture de la valeur du joystick sur l'axe x
-  rota = map ( x , 0 , 1023 , 0 , 500 );
-  if ( rota >  ) {                              // verification de la position du joystick
-    digitalWrite ( PontH, HIGH );               // activation du pont en H
-    while (x > ) {                              // verification de la position du joystick
-      analogWrite( MotorForward, Power );       // allumage du moteur pour tourner dans le sens horaire
-      analogWrite( MotorReverse, 0);            //
+  x = analogRead ( Joystick_x ) ;               // lecture de la valeur du joystick sur l'axe y
+  Serial.println ( x );
+  if ( x < mil_joy_x - 80 ) {                   // test de la valeur du joystick
+    digitalWrite ( PontH , HIGH );              // activation du pont en H
+    analogWrite ( MotorForward , Power );       // activation du sens 1 du moteur
+    analogWrite ( MotorReverse , 0 ) ;           
     }
-  digitalWrite( PontH, LOW );                   // le mouvement a été effectué, le pont en H est fermé
-  }
-
-  if ( rota < ) {                                  // verificiation de la position du joystick
-    digitalWrite( PontH, HIGH );
-    while (x < ) {
-      analogWrite( MotoForward, 0);
-      analogWrite( MotorReverse, Power);
-  }
-  digitalWrite( PontH, LOW );
-  }
-
+  digitalWrite ( PontH , LOW ) ;                // desactivation du pont en H
+  if ( x > mil_joy_x + 150 ) {                  // test de la valeur du joystick
+    digitalWrite ( PontH , HIGH ) ;             // activation du pont en H
+    analogWrite ( MotorForward , 0 ) ;
+    analogWrite ( MotorReverse , Power ) ;      // activation du sens 2 du moteur
+    }
+  digitalWrite ( PontH , LOW ) ;                // desactivation du pont en H
 }
 
 void loop() {
-  RGB_I() ;
+  //RGB_I() ;
   Moteur_Rota() ;
   Servo_Lampe() ;
 }
