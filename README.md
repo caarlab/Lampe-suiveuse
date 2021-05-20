@@ -7,7 +7,7 @@ Ce projet est réalisé dans le cadre du module Communication sans fil en Licenc
 
 Composants utilisés:
 
-- Carte Arduino
+- Carte Arduino Uno
 - Moteur à courant continu
 - Lampe (Projecteur d'intérieur)
 - Roulement à bille
