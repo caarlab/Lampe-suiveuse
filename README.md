@@ -1,8 +1,8 @@
 # Lampe-suiveuse
+Par FORNALI Dorian, HOFF Arnaud
 
 Ce projet est réalisé dans le cadre du module Communication sans fil en Licence 1 à l'université Cote d'Azur
 
-# FORNALI Dorian, HOFF Arnaud
 
 
 Composants utilisés:
