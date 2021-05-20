@@ -18,3 +18,6 @@ De nouveaux pieds sont imprimées mais encore une fois certains presente des dé
 
 10 Mai :
 La lampe est reçue. Une telecommande permettant de controler couleurs, animations et intensité est fournis avec. De nouvelles pieces sont imprimées. 
+
+17 Mai :
+Des pieces se brisent une fois de plus, je n'ai plus le temps de gerer l'integrité physique de la lampe. Je m'occupe desormais de la partie moteur dans son ensemble et prepare les slides pour la presentation.
