@@ -16,7 +16,8 @@ Le but de ce projet est d'essayer de réaliser une lampe suiveuse; un dispositif
 - Joystick
 - Pièces en impression 3D (Cercle de rotation / Roues / Pieds de soutien / Plateforme ...)
 
-![Screenshot](image0.jpg)
+![Uploading image0.jpg…]()
+
 # Logiciels de programmation utilisés:
 
 - Arduino
