@@ -70,7 +70,7 @@ void RGB_I () {
 
 void Moteur_Rota() {
   x = analogRead ( Joystick_x ) ;               // lecture de la valeur du joystick sur l'axe y
-  Serial.println ( x );
+  //Serial.println ( x );
   if ( x < mil_joy_x - 80 ) {                   // test de la valeur du joystick
     digitalWrite ( PontH , HIGH );              // activation du pont en H
     analogWrite ( MotorForward , Power );       // activation du sens 1 du moteur
